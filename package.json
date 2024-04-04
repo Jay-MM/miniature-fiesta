@@ -1,0 +1,11 @@
+{
+  "name": "sabor-manny",
+  "version": "1.0.0",
+  "description": "a full-stack application for a food service business that keeps track of orders",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
