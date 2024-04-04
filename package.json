@@ -3,9 +3,14 @@
   "version": "1.0.0",
   "description": "a full-stack application for a food service business that keeps track of orders",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test":"node --experimental-vm-modules node_modules/jest/bin/jest.js"
+
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^29.7.0"
+  }
 }
