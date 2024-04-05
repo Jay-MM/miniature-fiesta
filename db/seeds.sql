@@ -17,17 +17,21 @@ INSERT INTO menu_items (name, description, price, category, quantity_available, 
 ('Taco with Beans', 'Soft tortilla filled with beans', 5.99, 'Taco', 0, 3),
 ('Taco with Pressed Pork Rinds', 'Soft tortilla filled with pressed pork rinds', 6.99, 'Taco', 0, 4),
 ('Taco with Pork Rinds and Potatoes', 'Soft tortilla filled with pork rinds and potatoes', 6.99, 'Taco', 0, 5),
-('Taco with Mexican Shredded Beef', 'Soft tortilla filled with Mexican shredded beef', 7.99, 'Taco', 0, 6);
+('Taco with Mexican Shredded Beef', 'Soft tortilla filled with Mexican shredded beef', 7.99, 'Taco', 0, 6),
+('Coca-Cola', 'Refreshing Coca-Cola', 1.25, 'Beverage', 0, 7),
+('Squirt', 'Tangy Squirt Soda', 2.00, 'Beverage', 0, 8);
+
 
 INSERT INTO orders (customer_id, description, price, status, order_time) VALUES
-(1, 'Taco with Mashed Potatoes and Squirt', 8.99, 'Pending', '2024-04-04 12:00:00'),
-(2, 'Taco with Beans and Coca-Cola', 8.99, 'Pending', '2024-04-04 13:30:00');
+(1, 'Taco with Mashed Potatoes and Coca-Cola', 7.24, 'Pending', '2024-04-04 12:00:00'),
+(2, 'Taco with Beans and Squirt', 8.99, 'Pending', '2024-04-04 13:30:00');
+
 
 INSERT INTO order_items (order_id, menu_item_id, quantity, modifications) VALUES
 (1, 1, 1, NULL),
-(1, 7, 1, NULL),
+(1, 6, 1, NULL),
 (2, 2, 1, NULL),
-(2, 8, 1, NULL);
+(2, 7, 1, NULL);
 
 INSERT INTO payment_processes (order_id, total_payment, status, timedate) VALUES
 (1, 8.99, 'Completed', '2024-04-04 12:30:00'),
@@ -51,10 +55,11 @@ INSERT INTO roles (role_name, description) VALUES
 
 INSERT INTO menu_inventory (menu_item_id, inventory_id) VALUES
 (1, 1),
+(1, 2),
+(6, 7),
 (2, 1),
-(3, 1),
-(4, 1),
-(5, 1);
+(2, 3),
+(7, 8);
 
 INSERT INTO employee_roles (employee_id, role_id) VALUES
 (1, 1),
@@ -68,8 +73,8 @@ INSERT INTO menu_item_price_history (menu_item_id, price, date_changed) VALUES
 (5, 7.99, '2024-04-01 00:00:00');
 
 INSERT INTO employee_role_history (employee_id, role_id, date_changed) VALUES
-(1, 1, '2024-04-01 00:00:00'),
-(2, 2, '2024-04-01 00:00:00');
+(1, 2, '2024-04-01 00:00:00'),
+(2, 1, '2024-04-01 00:00:00');
 
 INSERT INTO promotions (description, discount_percentage, start_date, end_date, menu_item_id) VALUES
 ('Weekend Special', 10, '2024-04-01', '2024-04-30', 1),
