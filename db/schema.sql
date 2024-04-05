@@ -34,7 +34,7 @@ CREATE TABLE orders(
   id INT NOT NULL AUTO_INCREMENT,
   customer_id INT NOT NULL,
   description VARCHAR(255) NOT NULL,
-  amount INT NOT NULL,
+  price INT NOT NULL,
   status ENUM('Pending', 'Cooking', 'Ready', 'Delivered'),
   order_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   FOREIGN KEY (customer_id) REFERENCES customers(id),
